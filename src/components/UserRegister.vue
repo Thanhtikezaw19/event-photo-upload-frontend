@@ -80,6 +80,10 @@ export default {
   },
   methods: {
     async register() {
+      if (this.password !== this.password_confirmation) {
+        alert('Passwords do not match');
+        return;
+      }
       try {
         await axios.post('/register', {
           username: this.username,
