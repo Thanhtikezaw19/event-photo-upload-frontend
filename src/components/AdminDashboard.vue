@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       events: [],
-      backendUrl: process.env.VUE_APP_BACKEND_URL,
+      backendUrl: process.env.VUE_APP_BACKEND_URL ? process.env.VUE_APP_BACKEND_URL : '',
     };
   },
   async created() {

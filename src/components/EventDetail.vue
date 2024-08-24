@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     fullPhotoUrl(photoUrl) {
-      return `${process.env.VUE_APP_BACKEND_URL}${photoUrl}`;
+      return `${photoUrl}`;
     },
     onFileChange(event) {
       this.photoFile = event.target.files[0];
