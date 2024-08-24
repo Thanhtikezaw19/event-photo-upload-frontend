@@ -24,13 +24,46 @@
         ></textarea>
       </div>
 
+      <div class="mb-4">
+        <label for="location" class="block text-sm font-medium text-gray-700">Location (URL)</label>
+        <input 
+          type="url" 
+          id="location" 
+          v-model="location" 
+          required 
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="date" class="block text-sm font-medium text-gray-700">Event Date</label>
+        <input 
+          type="date" 
+          id="date" 
+          v-model="date" 
+          required 
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="time" class="block text-sm font-medium text-gray-700">Event Time</label>
+        <input 
+          type="time" 
+          id="time" 
+          v-model="time" 
+          required 
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+        />
+      </div>
+
       <div class="flex justify-between">
         <button 
-        @click="goBack" 
-        class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-      >
-        Back
-      </button>
+          @click="goBack" 
+          class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+        >
+          Back
+        </button>
         <button 
           type="submit" 
           class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
@@ -50,6 +83,9 @@ export default {
     return {
       name: '',
       description: '',
+      location: '',
+      date: '',
+      time: ''
     };
   },
   methods: {
@@ -64,6 +100,9 @@ export default {
       const newEvent = {
         name: this.name,
         description: this.description,
+        location: this.location,
+        date: this.date,
+        time: this.time,
         user_id: user.id,
       };
 

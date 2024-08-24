@@ -23,6 +23,43 @@
           required
         ></textarea>
       </div>
+
+      <div class="mb-4">
+        <label for="location" class="block text-sm font-medium text-gray-700">Event Location (URL)</label>
+        <input
+          id="location"
+          v-model="event.location"
+          type="url"
+          placeholder="Event Location"
+          class="mt-1 block w-full border border-gray-300 rounded-lg p-2 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          required
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="date" class="block text-sm font-medium text-gray-700">Event Date</label>
+        <input
+          id="date"
+          v-model="event.date"
+          type="date"
+          placeholder="Event Date"
+          class="mt-1 block w-full border border-gray-300 rounded-lg p-2 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          required
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="time" class="block text-sm font-medium text-gray-700">Event Time</label>
+        <input
+          id="time"
+          v-model="event.time"
+          type="time"
+          placeholder="Event Time"
+          class="mt-1 block w-full border border-gray-300 rounded-lg p-2 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          required
+        />
+      </div>
+
       <div class="flex justify-between">
         <router-link to="/admin" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium text-sm rounded-lg shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Back to Dashboard</router-link>
         <button
@@ -45,6 +82,9 @@ export default {
       event: {
         name: '',
         description: '',
+        location: '',
+        date: '',
+        time: '',
       },
     };
   },
